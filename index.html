@@ -42,15 +42,28 @@
     </div>
 
     <div class='item-container'>
-      <div class='item-container-header'>Accessibility</div>
+      <div class='item-container-header'>Customizability</div>
       <div class='item-container-content'>
         <label class='item'>
-          High Contrast Mode
-          <input id='high_contrast_checkbox' type='checkbox' class='item-toggle'>
+          Username
+          <input id='username_field' type='text' class='item-input' placeholder='Username'>
         </label>
       </div>
       <div class='item-container-footer'>
-        This switches the app colors to a higher contrast set that promotes readability in low light.
+        Enter the username you use to log into MyAnimeList.
+      </div>
+    </div>
+
+    <div class='item-container'>
+      <div class='item-container-header'>Customizability</div>
+      <div class='item-container-content'>
+        <label class='item'>
+          Password
+          <input id='password_field' type='password' class='item-input' placeholder='Password'>
+        </label>
+      </div>
+      <div class='item-container-footer'>
+        Enter the password you use to log into MyAnimeList.
       </div>
     </div>
 
@@ -72,7 +85,8 @@
 
     // Save for next launch
     localStorage['background_color'] = options['background_color'];
-    localStorage['high_contrast'] = options['high_contrast'];
+    localStorage['username'] = options['username'];
+    localStorage['password'] = options['password'];
 
     console.log('Got options: ' + JSON.stringify(options));
     return options;
