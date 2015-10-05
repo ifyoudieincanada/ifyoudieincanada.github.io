@@ -76,11 +76,13 @@
   <script>
   function getConfigData() {
     var backgroundColorPicker = document.getElementById('background_color_picker');
-    var highContrastCheckbox = document.getElementById('high_contrast_checkbox');
+    var usernameInput = document.getElementById('username_field');
+    var passwordInput = document.getElementById('password_field');
  
     var options = {
       'background_color': backgroundColorPicker.value,
-      'high_contrast': highContrastCheckbox.checked
+      'username': usernameInput.value,
+      'password': passwordInput.value
     };
 
     // Save for next launch
@@ -115,12 +117,14 @@
 
   (function() {
     var backgroundColorPicker = document.getElementById('background_color_picker');
-    var highContrastCheckbox = document.getElementById('high_contrast_checkbox');
+    var usernameInput = document.getElementById('username_field');
+    var passwordInput = document.getElementById('password_field');
 
     // Load any previously saved configuration, if available
-    if(localStorage['high_contrast']) {
-      highContrastCheckbox.checked = JSON.parse(localStorage['high_contrast']);
+    if(localStorage['username_field']) {
       backgroundColorPicker.value = localStorage['background_color'];
+      usernameInput.value = localstorage['username'];
+      passwordInput.value = localstorage['password'];
     }
   })();
   </script>
